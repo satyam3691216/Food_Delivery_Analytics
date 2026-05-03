@@ -21,3 +21,7 @@ print(df.columns)
 
 df.columns = df.columns.str.lower().str.replace(' ', '_')
 print(df.columns)
+print(df.isnull().sum())
+
+df.dropna(inplace=True)
+print(df.isnull().sum())
