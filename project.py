@@ -25,3 +25,10 @@ print(df.isnull().sum())
 
 df.dropna(inplace=True)
 print(df.isnull().sum())
+
+df = df[df['rate'] != 'NEW']
+df = df[df['rate'] != '-']
+df['rate'] = df['rate'].str.replace('/5', '')
+df['rate'] = pd.to_numeric(df['rate'], errors='coerce')
+print(df['rate'].head())
+print(df['rate'].dtype)
