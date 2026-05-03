@@ -8,3 +8,6 @@ print(df.columns)
 df.columns = df.columns.str.lower().str.replace(' ', '_')
 print(df.isnull().sum())
 df.dropna(inplace=True)
+
+df['rate'] = df['rate'].str.replace('/5', '')
+df['rate'] = pd.to_numeric(df['rate'], errors='coerce')
