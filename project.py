@@ -6,3 +6,5 @@ print(df.info())
 print(df.columns)  
 
 df.columns = df.columns.str.lower().str.replace(' ', '_')
+print(df.isnull().sum())
+df.dropna(inplace=True)
