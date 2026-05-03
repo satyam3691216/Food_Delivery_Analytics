@@ -14,3 +14,5 @@ df['rate'] = pd.to_numeric(df['rate'], errors='coerce')
 print(df['location'].value_counts().head())
 print(df['cuisines'].value_counts().head())
 print(df['rate'].describe())
+
+df.to_csv("clean_zomato.csv", index=False)
