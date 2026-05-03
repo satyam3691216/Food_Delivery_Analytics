@@ -35,3 +35,25 @@ print(df['rate'].dtype)
 print(df['location'].value_counts().head(10))
 print(df['cuisines'].value_counts().head(10))
 print(df['rate'].describe())
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+top_locations = df['location'].value_counts().head(10)
+
+plt.figure()
+top_locations.plot(kind='bar')
+plt.title("Top 10 Locations with Most Restaurants")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+plt.figure()
+sns.histplot(df['rate'], bins=20)
+plt.title("Distribution of Ratings")
+plt.show()
+
+plt.figure()
+sns.scatterplot(x=df['approx_cost(for_two_people)'], y=df['rate'])
+plt.title("Cost vs Rating")
+plt.show()
