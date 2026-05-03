@@ -4,3 +4,5 @@ print(df.head()
   
 print(df.info())
 print(df.columns)  
+
+df.columns = df.columns.str.lower().str.replace(' ', '_')
