@@ -18,3 +18,6 @@ print(df['rate'].describe())
 df.to_csv("clean_zomato.csv", index=False)
 print(df.info())
 print(df.columns)
+
+df.columns = df.columns.str.lower().str.replace(' ', '_')
+print(df.columns)
