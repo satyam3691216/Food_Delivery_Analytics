@@ -16,3 +16,5 @@ print(df['cuisines'].value_counts().head())
 print(df['rate'].describe())
 
 df.to_csv("clean_zomato.csv", index=False)
+print(df.info())
+print(df.columns)
